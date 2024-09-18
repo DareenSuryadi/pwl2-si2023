@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Models\Supplier;
 
-
-class SupplierController extends Controller
+class TransactionController extends Controller
 {
     /* 
     * index
@@ -17,11 +16,11 @@ class SupplierController extends Controller
 
     public function index() : View
     {
-        $supplier = new Supplier;
-        $suppliers = $supplier->get_supplier()
+        $transaction = new Transaction;
+        $transactions = $transaction->get_transaction()
                             ->latest()
                             ->paginate(10);
     
-        return view('suppliers.index', compact('suppliers'));    
+        return view('transactions.index', compact('transactions'));    
     }
 }

@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <h3 class="text-center my-4">Tutorial Laravel 11</h3>
+                    <h3 class="text-center my-4">Products</h3>
                     <hr>
                 </div>
 
@@ -26,6 +26,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">IMAGE</th>
+                                    <th scope="col">SUPPLIER NAME</th>
                                     <th scope="col">TITLE</th>
                                     <th scope="col">CATEGORY</th>
                                     <th scope="col">PRICE</th>
@@ -40,8 +41,9 @@
                                             <img src="{{ asset('/storage/products/' . $product->image) }}" class="rounded"
                                                 style="width: 150px">
                                         </td>
+                                        <td>{{ $product->supplier_name }}</td>
                                         <td>{{ $product->title }}</td>
-                                        <td>{{ $product->product_category->name }}</td>
+                                        <td>{{ $product->product_category_name }}</td>
                                         <td>Rp {{ number_format($product->price, 2, ',', '.') }}</td>
                                         <td>{{ $product->stock }}</td>
                                         <td class="text-center">
